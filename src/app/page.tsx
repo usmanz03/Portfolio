@@ -127,7 +127,7 @@ const Portfolio = () => {
 
   const experiences = [
     {
-      title: "AI Systems Intern & Team Lead - Data Science Department",
+      title: "AI Systems Intern & Team Lead - FAST School of Computing",
       company: "FAST-NUCES",
       duration: "June 2025 - Aug 2025",
       location: "Lahore, Pakistan",

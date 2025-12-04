@@ -253,7 +253,7 @@ const Portfolio = () => {
                   variants={fadeInUp}
                 >
                   <p>Computer Science Student &</p>
-                  <p className="text-emerald-400 font-semibold">AI/ML Enthusiast</p>
+                  <p className="text-emerald-400 font-semibold">Software Engineer</p>
                 </motion.div>
               </div>
 
@@ -261,8 +261,7 @@ const Portfolio = () => {
                 className="text-xl text-slate-400 leading-relaxed max-w-xl mb-8"
                 variants={fadeInUp}
               >
-                7th-semester Computer Science student with hands-on experience in AI/ML, web, and Android development. 
-                Passionate about building impactful solutions and improving user experiences through technology.
+               7th-semester Computer Science student specializing in full-stack development, creating scalable backends with Django DRF and dynamic frontends with Next.js.
               </motion.p>
 
               <motion.div 

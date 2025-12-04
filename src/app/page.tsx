@@ -129,12 +129,21 @@ const Portfolio = () => {
 
   const experiences = [
     {
+      title: "Software Engineer",
+      company: "Arcompsol",
+      duration: "Nov 2025 - Present",
+      location: "Lahore, Pakistan",
+      achievements: [
+        "Currently building a full-stack product using Django DRF and a Next.js"
+      ]
+    },
+    {
       title: "AI Systems Intern & Team Lead - FAST School of Computing",
       company: "FAST-NUCES",
       duration: "June 2025 - Aug 2025",
       location: "Lahore, Pakistan",
       achievements: [
-        "Led a 5-member team in developing PaperPilot, a neuro-symbolic AI platform for automated academic paper co-authoring",
+        "Led the development PaperPilot, a neuro-symbolic AI platform for automated academic paper co-authoring",
         "Designed and implemented specialized agents (LLM Extraction Agent, Research Agent, Writing Agent, Citation Agent, Knowledge Graph Builder, and Orchestrator)",
         "Automated 80% of the end-to-end research workflow, reducing manual effort by 90% and improving citation accuracy by 70% for 50+ beta users",
         "Delivered features like dynamic graph visualization, auto-citation planning, and DOCX export for seamless user experience",
@@ -228,14 +237,7 @@ const Portfolio = () => {
               variants={staggerChildren}
             >
               <div className="space-y-4">
-                <motion.div 
-                  className="inline-flex items-center px-4 py-2 bg-emerald-900/30 border border-emerald-700/50 rounded-full"
-                  variants={fadeInUp}
-                >
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 animate-pulse"></div>
-                  <span className="text-emerald-300 text-sm">Available for opportunities</span>
-                </motion.div>
-                
+             
                 <motion.h1 
                   className="text-6xl lg:text-7xl font-bold leading-tight"
                   variants={fadeInUp}

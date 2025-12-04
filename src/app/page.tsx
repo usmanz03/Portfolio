@@ -85,7 +85,7 @@ const Portfolio = () => {
     ],
       category: "Data Science",
       featured: true,
-      github: "https://github.com/syed-muhammad-usman-zafar/Mansoorah-Hospital-Patient-Influx-Analysis",
+      github: "https://github.com/usmanz03/Mansoorah-Hospital-Patient-Influx-Analysis",
       website: "https://patient-influx-analysis.streamlit.app/"
     },
     {
@@ -97,7 +97,7 @@ const Portfolio = () => {
       highlights: ["Medication tracker",,"AI Chatbot", "Calendar view","Nearby Pharmacy locator","Perscritions upload" ],
       category: "Mobile Development",
       featured: true,
-      github:"https://github.com/syed-muhammad-usman-zafar/MediTrack"
+      github:"https://github.com/usmanz03/MediTrack"
     },
     {
       title: "SharedFast",
@@ -108,7 +108,7 @@ const Portfolio = () => {
       highlights: ["Folder-based organization", "Multi-platform sharing", "Image capture integration", "Adapter Pattern implementation"],
       category: "Mobile Development",
       featured: true,
-      github:"https://github.com/syed-muhammad-usman-zafar/SharedFast"
+      github:"https://github.com/usmanz03/SharedFast"
      
     },
     
@@ -121,7 +121,7 @@ const Portfolio = () => {
       highlights: ["90% manual effort reduction", "Deployed app", "Asset visualization dashboard", "Automated calculation engine"],
       category: "Data Science",
       featured: true,
-        github: "https://github.com/syed-muhammad-usman-zafar/ZakatFlow", // Add your actual repo URL
+        github: "https://github.com/usmanz03/ZakatFlow", // Add your actual repo URL
       website: "https://zakatflow.streamlit.app/" // Add if deployed
     }
     
@@ -291,7 +291,7 @@ const Portfolio = () => {
                 </motion.button>
                 
                 <motion.a 
-                  href="https://github.com/syed-muhammad-usman-zafar" 
+                  href="https://github.com/usmanz03" 
                   className="inline-flex items-center px-8 py-4 bg-slate-800 border border-slate-700 text-white rounded-xl font-semibold hover:bg-slate-700 hover:border-emerald-500 transition-all duration-300"
                   variants={scaleIn}
                   whileHover={{ scale: 1.02 }}
@@ -662,7 +662,7 @@ const Portfolio = () => {
             {[
               { icon: <Mail className="w-8 h-8" />, label: "Email", value: "usmanzafar2003@gmail.com", href: "mailto:usmanzafar2003@gmail.com" },
               { icon: <Linkedin className="w-8 h-8" />, label: "LinkedIn", value: "Connect with me", href: "https://www.linkedin.com/in/usman--zafar/" },
-              { icon: <Github className="w-8 h-8" />, label: "GitHub", value: "View my code", href: "https://github.com/syed-muhammad-usman-zafar" }
+              { icon: <Github className="w-8 h-8" />, label: "GitHub", value: "View my code", href: "https://github.com/usmanz03" }
             ].map((contact, index) => (
               <a
                 key={index}

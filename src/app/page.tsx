@@ -134,7 +134,7 @@ const Portfolio = () => {
       duration: "Nov 2025 - Present",
       location: "Lahore, Pakistan",
       achievements: [
-        "Currently building a full-stack product using Django DRF and a Next.js"
+        "Currently building full-stack products using Django DRF and Next.js"
       ]
     },
     {

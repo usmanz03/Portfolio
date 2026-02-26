@@ -4,12 +4,10 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, MapPin, ExternalLink, Calendar,Code, Database, Smartphone, GraduationCap, Briefcase, Download, ArrowRight, Star, Zap } from 'lucide-react';
-import ResumeModal from './components/ResumeModal';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('about');
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -181,12 +179,6 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-900 text-white">
-      {/* Resume Modal */}
-      <ResumeModal 
-        isOpen={isResumeModalOpen}
-        onClose={() => setIsResumeModalOpen(false)}
-      />
-
       {/* Enhanced Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-slate-900/90 backdrop-blur-xl border-b border-emerald-800/30' : 'bg-transparent'
@@ -280,8 +272,9 @@ const Portfolio = () => {
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </motion.a>
                 
-                <motion.button 
-                  onClick={() => setIsResumeModalOpen(true)}
+                <motion.a
+                  href="/resume.pdf"
+                  download="Syed Muhammad Usman Zafar's Resume.pdf"
                   className="inline-flex items-center px-8 py-4 bg-slate-800 border border-slate-700 text-white rounded-xl font-semibold hover:bg-slate-700 hover:border-emerald-500 transition-all duration-300"
                   variants={scaleIn}
                   whileHover={{ scale: 1.02 }}
@@ -289,7 +282,7 @@ const Portfolio = () => {
                 >
                   <Download className="w-5 h-5 mr-3" />
                   Download Resume
-                </motion.button>
+                </motion.a>
                 
                 <motion.a 
                   href="https://github.com/usmanz03" 

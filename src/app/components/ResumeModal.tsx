@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Download, X, FileText, Cpu } from 'lucide-react';
+import { Download, X, FileText } from 'lucide-react';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -8,13 +8,10 @@ interface ResumeModalProps {
 }
 
 const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
-  const handleDownload = (resumeType: 'swe' | 'aiml') => {
-    const fileName = resumeType === 'swe' ? 'sweresume.pdf' : 'aimlresume.pdf';
-    const displayName = resumeType === 'swe' ? 'SWE_Resume_Usman_Zafar.pdf' : 'AIML_Resume_Usman_Zafar.pdf';
-    
+  const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = `/${fileName}`;
-    link.download = displayName;
+    link.href = '/resume.pdf';
+    link.download = 'Usman_Zafar_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -22,25 +19,6 @@ const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
     // Close modal after download
     setTimeout(() => onClose(), 500);
   };
-
-  const resumeOptions = [
-    {
-      type: 'swe' as const,
-      title: 'Software Engineering Resume',
-      description: 'Focused on web development, mobile apps, and software engineering experience',
-      icon: <FileText className="w-8 h-8" />,
-      gradient: 'from-blue-500 to-purple-600',
-      hoverGradient: 'hover:from-blue-600 hover:to-purple-700'
-    },
-    {
-      type: 'aiml' as const,
-      title: 'AI/ML Resume',
-      description: 'Highlighting machine learning, data science, and AI research experience',
-      icon: <Cpu className="w-8 h-8" />,
-      gradient: 'from-emerald-500 to-teal-600',
-      hoverGradient: 'hover:from-emerald-600 hover:to-teal-700'
-    }
-  ];
 
   return (
     <AnimatePresence>
@@ -80,7 +58,7 @@ const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
                 transition={{ delay: 0.1 }}
               >
                 <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-                  Choose Resume Type
+                  Download Resume
                 </span>
               </motion.h2>
               <motion.p 
@@ -89,63 +67,48 @@ const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                Select the resume that best fits your needs
+                Click below to download my professional resume
               </motion.p>
             </div>
 
-            {/* Resume Options */}
-            <div className="grid gap-6">
-              {resumeOptions.map((option, index) => (
-                <motion.button
-                  key={option.type}
-                  onClick={() => handleDownload(option.type)}
-                  className={`group relative bg-gradient-to-br from-slate-800/50 to-slate-700/30 rounded-2xl p-6 border border-slate-600/30 hover:border-emerald-500/50 transition-all duration-300 hover:scale-[1.02] text-left w-full`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 + index * 0.1 }}
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <div className="flex items-start gap-4">
-                    {/* Icon */}
-                    <div className={`bg-gradient-to-r ${option.gradient} rounded-xl p-3 text-white group-hover:scale-110 transition-transform duration-200`}>
-                      {option.icon}
-                    </div>
+            {/* Resume Download Button */}
+            <div className="flex justify-center">
+              <motion.button
+                onClick={handleDownload}
+                className="group relative bg-gradient-to-br from-slate-800/50 to-slate-700/30 rounded-2xl p-8 border border-slate-600/30 hover:border-emerald-500/50 transition-all duration-300 hover:scale-[1.02] text-center w-full max-w-md"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="flex flex-col items-center gap-4">
+                  {/* Icon */}
+                  <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl p-4 text-white group-hover:scale-110 transition-transform duration-200">
+                    <FileText className="w-10 h-10" />
+                  </div>
+                  
+                  {/* Content */}
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                      Professional Resume
+                    </h3>
+                    <p className="text-slate-400 mb-4 group-hover:text-slate-300 transition-colors">
+                      Full experience, skills, and education details
+                    </p>
                     
-                    {/* Content */}
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
-                        {option.title}
-                      </h3>
-                      <p className="text-slate-400 mb-4 group-hover:text-slate-300 transition-colors">
-                        {option.description}
-                      </p>
-                      
-                      {/* Download Button */}
-                      <div className={`inline-flex items-center px-4 py-2 bg-gradient-to-r ${option.gradient} ${option.hoverGradient} text-white rounded-lg font-semibold transition-all duration-200 group-hover:shadow-lg`}>
-                        <Download className="w-4 h-4 mr-2" />
-                        Download Resume
-                      </div>
+                    {/* Download Button */}
+                    <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-lg font-semibold transition-all duration-200 group-hover:shadow-lg">
+                      <Download className="w-5 h-5 mr-2" />
+                      Download PDF
                     </div>
                   </div>
+                </div>
 
-                  {/* Hover Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-teal-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </motion.button>
-              ))}
+                {/* Hover Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-teal-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.button>
             </div>
-
-            {/* Footer Note */}
-            <motion.div 
-              className="text-center mt-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              <p className="text-slate-500 text-sm">
-                Both resumes are optimized for different career paths and opportunities
-              </p>
-            </motion.div>
           </motion.div>
         </div>
       )}

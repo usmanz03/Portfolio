@@ -253,7 +253,7 @@ const Portfolio = () => {
                 className="text-xl text-slate-400 leading-relaxed max-w-xl mb-8"
                 variants={fadeInUp}
               >
-               7th-semester Computer Science student specializing in full-stack development, creating scalable backends with Django DRF and dynamic frontends with Next.js.
+               Final Year Computer Science student specializing in full-stack development, creating scalable backends with Django DRF and dynamic frontends with Next.js.
               </motion.p>
 
               <motion.div 

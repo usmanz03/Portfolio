@@ -9,35 +9,35 @@ import Magnetic from "./Magnetic";
 
 const ProjectFiles: React.FC = () => {
   return (
-    <section id="projects" className="py-16 sm:py-20 px-5 sm:px-8">
+    <section id="projects" className="py-10 sm:py-20 px-5 sm:px-8">
       <div className="max-w-5xl mx-auto">
         <SectionHeading number="02" title="Selected work" />
 
-        <div className="border-t border-border">
+        <div className="flex flex-col gap-4 sm:gap-0 sm:border-t sm:border-border">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="py-10 border-b border-border"
+              className="p-4 sm:p-0 border border-border rounded-lg sm:rounded-none sm:border-t-0 sm:border-l-0 sm:border-r-0 sm:py-10"
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.35, delay: (index % 2) * 0.04 }}
             >
-              <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-                <h3 className="font-display text-2xl sm:text-3xl text-fg">{project.title}</h3>
-                <span className="text-xs uppercase tracking-wide text-fg-muted">
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-x-6">
+                <h3 className="font-display text-lg sm:text-3xl text-fg">{project.title}</h3>
+                <span className="text-xs uppercase tracking-wide text-fg-muted shrink-0">
                   {project.category} · {project.date}
                 </span>
               </div>
               <p className="text-accent text-sm mt-1">{project.subtitle}</p>
 
-              <p className="mt-4 text-fg-muted leading-relaxed max-w-2xl">{project.description}</p>
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-fg-muted leading-relaxed max-w-2xl">{project.description}</p>
 
-              <p className="mt-4 text-sm text-fg-muted max-w-2xl">
+              <p className="mt-3 sm:mt-4 text-sm text-fg-muted max-w-2xl">
                 {project.highlights.join("  ·  ")}
               </p>
 
-              <p className="mt-4 text-xs text-fg-muted">{project.tech.join(", ")}</p>
+              <p className="mt-3 sm:mt-4 text-xs text-fg-muted">{project.tech.join(", ")}</p>
 
               <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
                 {project.github && (

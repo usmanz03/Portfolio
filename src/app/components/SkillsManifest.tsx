@@ -7,11 +7,11 @@ import SectionHeading from "./SectionHeading";
 
 const SkillsManifest: React.FC = () => {
   return (
-    <section id="skills" className="py-16 sm:py-20 px-5 sm:px-8">
+    <section id="skills" className="py-10 sm:py-20 px-5 sm:px-8">
       <div className="max-w-5xl mx-auto">
         <SectionHeading number="03" title="Skills" />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 border-t border-border pt-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 sm:gap-x-8 gap-y-6 sm:gap-y-10 border-t border-border pt-6 sm:pt-10">
           {skills.map((group, index) => (
             <motion.div
               key={group.category}

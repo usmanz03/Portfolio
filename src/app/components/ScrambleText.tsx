@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
+import { useHasHover } from "../hooks/useHasHover";
 
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
@@ -15,10 +16,11 @@ const ScrambleText: React.FC<ScrambleTextProps> = ({ text, className, as = "span
   const [display, setDisplay] = useState(text);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const reducedMotion = usePrefersReducedMotion();
+  const hasHover = useHasHover();
   const Tag = as;
 
   const scramble = () => {
-    if (reducedMotion) return;
+    if (reducedMotion || !hasHover) return;
     if (intervalRef.current) clearInterval(intervalRef.current);
 
     let iteration = 0;

@@ -20,12 +20,12 @@ const ContactPrompt: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-20 px-5 sm:px-8">
+    <section id="contact" className="py-10 sm:py-20 px-5 sm:px-8">
       <div className="max-w-5xl mx-auto">
         <SectionHeading number="05" title="Let's talk" />
 
         <motion.p
-          className="text-lg text-fg-muted leading-relaxed max-w-xl"
+          className="text-sm sm:text-lg text-fg-muted leading-relaxed max-w-xl"
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
@@ -35,7 +35,7 @@ const ContactPrompt: React.FC = () => {
           Feel free to reach out.
         </motion.p>
 
-        <div className="mt-8 flex flex-col border-t border-border">
+        <div className="mt-6 sm:mt-8 flex flex-col border-t border-border">
           {contactLinks.map((c) => (
             <Magnetic
               key={c.label}
@@ -45,9 +45,9 @@ const ContactPrompt: React.FC = () => {
               onClick={(e) => handleClick(e, c.label, c.href)}
               strength={0.15}
               maxOffset={8}
-              className="group flex items-center justify-between py-5 border-b border-border"
+              className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0 py-3.5 sm:py-5 border-b border-border"
             >
-              <span className="font-display text-xl sm:text-2xl text-fg group-hover:text-accent transition-colors capitalize">
+              <span className="font-display text-lg sm:text-2xl text-fg group-hover:text-accent transition-colors capitalize">
                 {c.label}
               </span>
               <span className="flex items-center gap-1.5 text-sm text-fg-muted group-hover:text-accent transition-colors">

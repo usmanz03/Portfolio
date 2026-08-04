@@ -3,6 +3,7 @@
 import React from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
+import { useHasHover } from "../hooks/useHasHover";
 
 interface MagneticProps {
   children: React.ReactNode;
@@ -28,6 +29,7 @@ const Magnetic: React.FC<MagneticProps> = ({
   onClick,
 }) => {
   const reducedMotion = usePrefersReducedMotion();
+  const hasHover = useHasHover();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const springX = useSpring(x, { stiffness: 300, damping: 20, mass: 0.4 });
@@ -36,7 +38,7 @@ const Magnetic: React.FC<MagneticProps> = ({
   const clamp = (v: number) => Math.max(-maxOffset, Math.min(maxOffset, v));
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    if (reducedMotion) return;
+    if (reducedMotion || !hasHover) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const relX = e.clientX - (rect.left + rect.width / 2);
     const relY = e.clientY - (rect.top + rect.height / 2);
@@ -53,6 +55,7 @@ const Magnetic: React.FC<MagneticProps> = ({
     style: { x: springX, y: springY },
     onMouseMove: handleMouseMove,
     onMouseLeave: handleMouseLeave,
+    whileTap: { scale: 0.96 },
     className,
   };
 

@@ -9,8 +9,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        bg: "var(--bg)",
+        fg: "var(--fg)",
+        "fg-muted": "var(--fg-muted)",
+        border: "var(--border)",
+        accent: "var(--accent)",
+        "accent-dim": "var(--accent-dim)",
+      },
+      fontFamily: {
+        sans: ["var(--font-geist-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-fraunces)", "ui-serif", "Georgia", "serif"],
       },
     },
   },

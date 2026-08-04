@@ -5,8 +5,8 @@ export default function manifest() {
     description: 'Portfolio of Usman Zafar - AI/ML Developer & Computer Science Student',
     start_url: '/',
     display: 'standalone',
-    background_color: '#0f172a',
-    theme_color: '#10b981',
+    background_color: '#faf7f2',
+    theme_color: '#c1521f',
     icons: [
       {
         src: '/icon',

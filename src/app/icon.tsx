@@ -12,15 +12,17 @@ export default function Icon() {
       <div
         style={{
           fontSize: 16,
-          background: 'linear-gradient(135deg, #10b981 0%, #14b8a6 100%)',
+          background: '#faf7f2',
           width: '100%',
           height: '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#0f172a',
+          color: '#c1521f',
           fontWeight: 'bold',
-          borderRadius: '8px',
+          fontFamily: 'serif',
+          border: '1px solid #e4ddd0',
+          borderRadius: '6px',
         }}
       >
         UZ

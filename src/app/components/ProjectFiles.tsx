@@ -4,15 +4,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "../data";
-import SectionHeading from "./SectionHeading";
+import CollapsibleSection from "./CollapsibleSection";
 import Magnetic from "./Magnetic";
+import Badge from "./Badge";
 
 const ProjectFiles: React.FC = () => {
   return (
     <section id="projects" className="py-10 sm:py-20 px-5 sm:px-8">
       <div className="max-w-5xl mx-auto">
-        <SectionHeading number="02" title="Selected work" />
-
+        <CollapsibleSection id="projects" number="02" title="Selected work">
         <div className="flex flex-col gap-4 sm:gap-0 sm:border-t sm:border-border">
           {projects.map((project, index) => (
             <motion.div
@@ -33,11 +33,17 @@ const ProjectFiles: React.FC = () => {
 
               <p className="mt-3 sm:mt-4 text-sm sm:text-base text-fg-muted leading-relaxed max-w-2xl">{project.description}</p>
 
-              <p className="mt-3 sm:mt-4 text-sm text-fg-muted max-w-2xl">
-                {project.highlights.join("  ·  ")}
-              </p>
+              <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5">
+                {project.highlights.map((h) => (
+                  <Badge key={h}>{h}</Badge>
+                ))}
+              </div>
 
-              <p className="mt-3 sm:mt-4 text-xs text-fg-muted">{project.tech.join(", ")}</p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {project.tech.map((t) => (
+                  <Badge key={t}>{t}</Badge>
+                ))}
+              </div>
 
               <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
                 {project.github && (
@@ -66,6 +72,7 @@ const ProjectFiles: React.FC = () => {
             </motion.div>
           ))}
         </div>
+        </CollapsibleSection>
       </div>
     </section>
   );

@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
   const linkedinLink = contactLinks.find((c) => c.label === "linkedin");
 
   const ctaClass =
-    "group inline-flex items-center justify-center gap-1.5 text-sm text-fg border border-border rounded-full px-4 py-2 sm:border-0 sm:rounded-none sm:px-0 sm:py-0 hover:text-accent hover:border-accent-dim transition-colors";
+    "group inline-flex items-center justify-center gap-1.5 text-sm text-fg border border-border rounded-full px-5 py-3 sm:border-0 sm:rounded-none sm:px-0 sm:py-0 hover:text-accent hover:border-accent-dim transition-colors";
 
   return (
     <section id="about" className="pt-24 sm:pt-40 pb-12 sm:pb-20 px-5 sm:px-8">

@@ -4,15 +4,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { experiences } from "../data";
-import SectionHeading from "./SectionHeading";
+import CollapsibleSection from "./CollapsibleSection";
 import Magnetic from "./Magnetic";
 
 const ExperienceLog: React.FC = () => {
   return (
     <section id="experience" className="py-10 sm:py-20 px-5 sm:px-8">
       <div className="max-w-5xl mx-auto">
-        <SectionHeading number="01" title="Experience" />
-
+        <CollapsibleSection id="experience" number="01" title="Experience">
         <div className="flex flex-col gap-4 sm:gap-0 sm:border-t sm:border-border">
           {experiences.map((exp, index) => (
             <motion.div
@@ -57,6 +56,7 @@ const ExperienceLog: React.FC = () => {
             </motion.div>
           ))}
         </div>
+        </CollapsibleSection>
       </div>
     </section>
   );

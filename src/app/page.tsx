@@ -10,10 +10,12 @@ import EducationBlock from "./components/EducationBlock";
 import ContactPrompt from "./components/ContactPrompt";
 import SiteFooter from "./components/SiteFooter";
 import { sections } from "./data";
+import { MobileAccordionProvider, useMobileAccordion } from "./context/MobileAccordionContext";
 
-const Portfolio = () => {
+const PortfolioContent = () => {
   const [activeSection, setActiveSection] = useState("about");
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const { open } = useMobileAccordion();
 
   useEffect(() => {
     const elements = sections
@@ -35,6 +37,7 @@ const Portfolio = () => {
   }, []);
 
   const handleNavigate = (id: string) => {
+    open(id);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -52,5 +55,11 @@ const Portfolio = () => {
     </div>
   );
 };
+
+const Portfolio = () => (
+  <MobileAccordionProvider>
+    <PortfolioContent />
+  </MobileAccordionProvider>
+);
 
 export default Portfolio;

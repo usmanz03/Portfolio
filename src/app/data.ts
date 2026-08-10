@@ -92,9 +92,10 @@ export const experiences = [
     duration: "Nov 2025 - July 2026",
     location: "Lahore, Pakistan",
     achievements: [
-      "Built a data pipeline for Sertis achieving >90% accuracy in automated habitational file processing",
+      "Developed a data pipeline for an enterprise insurance tech system achieving >90% accuracy in automated insurance file processing.",
       "Architected a dynamic metadata and RAG-based mapping system improving auto-mapping accuracy by 30% while reducing processing failures by 60% through Pandas optimization",
-      "Collaborated on a major architectural migration, transitioning legacy Laravel and Node.js applications to a modern Next.js and NestJS stack to improve system scalability and performance",
+      "Collaborated on a major architectural migration of an enterprise health tech app  transitioning legacy Laravel and Node.js applications to a modern Next.js and NestJS stack to improve system scalability and performance.",
+      "Architected and completely rewrote the caching architecture for a high-throughput fintech product, implementing advanced caching layers and fine-tuning TTL strategies to drastically reduce database load, minimize API latency, and ensure high availability for critical financial transactions.",
       "Technologies: Python, Django, Django REST Framework, PostgreSQL, Pandas, Next.js, NestJS",
     ],
   },

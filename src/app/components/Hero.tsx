@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
               download="Syed Muhammad Usman Zafar's Resume.pdf"
               className={ctaClass}
             >
-              Download résumé
+              Download resume
               <ArrowUpRight className="w-4 h-4 transition-transform sm:group-hover:translate-x-0.5 sm:group-hover:-translate-y-0.5" />
             </Magnetic>
             <Magnetic
